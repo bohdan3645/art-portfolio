@@ -1,0 +1,86 @@
+
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0px;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    background-color: rgb(0, 0, 0, 0.7);
+
+    &[opened] {
+        display: block;
+    }
+
+    .modal__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+        color: inherit;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &::backdrop {
+        background-color: rgb(0, 0, 0, 0.7);
+    }
+
+    .carusel__container { 
+        display: flex;
+        justify-content: center;
+        height: 100%;
+
+        .visible__area {
+            overflow: hidden;
+            transition: width 200ms ease-in-out;
+
+            .image__row {
+                display: flex;
+                transition: transform 200ms ease-in-out;
+                height: 100%;
+            }
+        }
+
+        .modal__buttons {
+            position: absolute;
+            inset: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                border: none;
+                background-color: transparent;
+                font-size: 3rem;
+                color: inherit;
+                transition: transform 250ms ease-in-out,
+                            opacity 250ms ease-in-out;
+                cursor: pointer;
+                padding: 20px;
+                opacity: 0.5;
+    
+                &:hover {
+                    transform: scale(125%);
+                    opacity: 1;
+                }
+            }
+
+            button:disabled {
+                transform: none;
+                opacity: 0.2;
+                cursor: initial;
+            }
+        }
+
+    }
+
+    img {
+        height: 100%;
+        width: initial;
+    }
+}
+
+

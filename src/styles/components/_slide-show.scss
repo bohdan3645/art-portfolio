@@ -1,0 +1,38 @@
+.slideshow {
+    &__viewport {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        transition: width 200ms ease-in-out;
+
+        .slide {
+            position: absolute;
+            transition: transform 200ms ease-in-out,
+                        opacity 200ms ease-in-out;
+
+            &[data-position="left"] {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            &[data-position="right"] {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    }
+
+    &__navigation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - 4rem);
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: 2rem;
+    }
+}

@@ -1,0 +1,39 @@
+@import '../sass-utils/_mixins';
+
+.header__container {
+    height: clamp(400px, 500px, 50vh);
+    position: relative;
+    @include background-image(url('/src/assets/images/header-img.jpg'));
+    display: flex;
+    justify-content: center;    
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(9, 9, 9, .5), rgb(9, 9, 9) 70%);
+    };
+
+    .header__content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: 5%;     
+
+        .header__subtitle {
+            font-size: 1.1rem;
+            letter-spacing: .1rem;
+        }
+
+        .profile__pic {
+            width: 130px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-block-end: 2rem;
+        }
+    
+    }
+
+}

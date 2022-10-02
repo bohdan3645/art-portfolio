@@ -1,0 +1,32 @@
+@import '../sass-utils/variables';
+
+.contact__container {
+    margin-block: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .contact__link {
+        cursor: pointer;
+        color: $secondary-color;
+        margin-inline: 1rem;
+        font-size: 1.3rem;
+        transition: color 200ms ease-in-out;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: unset;
+        };
+
+        & :first-child {
+            margin-top: 10px;
+        }
+
+        .contact__info {
+            margin-inline-start: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: -15px;
+        }
+    }
+}

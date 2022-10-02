@@ -1,0 +1,7 @@
+@use '../sass-utils/variables' as *;
+
+.navigation__container {
+    position: sticky;
+    top: 0;
+    background-color: $background-color;
+}

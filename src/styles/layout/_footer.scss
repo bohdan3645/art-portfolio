@@ -1,0 +1,10 @@
+@use '../sass-utils/variables' as *;
+
+.footer__container {
+    background-color: $background-color;
+    padding-block: 20px;
+    text-align: center;
+    color: $secondary-color;
+    font-size: 1.2rem;
+    margin-block: auto;
+}

@@ -1,0 +1,33 @@
+@use '../sass-utils/variables' as *;
+
+.round__button {
+    display: flex;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: .7;
+    padding: 1rem;
+    border-radius: 50%;
+    transition: opacity 200ms ease-in-out,
+                transform 200ms ease-in-out,
+                background-color 200ms ease-in-out;
+
+    &:hover {
+        opacity: 1;
+        transform: scale(115%);
+        background-color: $button-hover-color;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
+    &:disabled {
+        visibility: hidden;
+    }
+
+    & > :first-child {
+        font-size: 2rem;
+        color: $primary-font-color;
+    }
+}

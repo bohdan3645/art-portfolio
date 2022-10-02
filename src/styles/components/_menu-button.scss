@@ -1,0 +1,29 @@
+@use '../sass-utils/variables' as *;
+
+.menu__button__container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    padding-block: 1rem;
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+
+    & :first-child {
+        font-size: 2rem;
+    }
+
+    & h2 {
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .menu__button__container {
+        display: flex;
+    }
+}

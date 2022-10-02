@@ -1,0 +1,68 @@
+@use '../sass-utils/variables' as *;
+
+.full__screen__nav__container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: $background-color;
+
+    .full__screen__nav__close__button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+    }
+
+    .full__screen__nav__links {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        & li {
+            width: 100%;
+            text-align: center;
+
+            .full__screen__nav__link {
+                display: block;
+                padding: 1.5rem;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.full__screen__nav__container[open] {
+    display: block;
+    animation-name: fade-in;
+    animation-duration: 300ms;
+
+    html, body {
+        overflow: hidden;
+    }
+}
+
+.full__screen__nav__container[closing] {
+    animation-name: fade-out;
+    animation-duration: 300ms;
+}
+
+@media screen and (min-width: 800px) {
+    .full__screen__nav__container[open] {
+        display: none;
+    }
+}
+
+@keyframes fade-in {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@keyframes fade-out {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}

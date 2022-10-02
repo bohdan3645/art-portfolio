@@ -1,0 +1,33 @@
+@import '../sass-utils/variables';
+
+.nav__container {
+    display: none;
+    height: 72px;
+    justify-content: center;
+
+    .nav__link {
+        padding-inline: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        height: 100%;
+        display: block;
+        line-height: 72px;
+        transition: color 200ms ease-in-out, 
+                    background-color 200ms ease-in-out;
+
+        &__active {
+            background-color: $button-hover-color;
+            color: $primary-color-darken
+        };
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav__container {
+        display: flex;
+    }
+}
