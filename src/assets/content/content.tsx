@@ -6,12 +6,10 @@ export const contactOptions = [
 	{
 		name: 'Whats-app',
 		icon: <BsWhatsapp />,
-		info: env.PHONE_NUMBER,
-		link: `https://wa.me/${env.PHONE_NUMBER.split('')
-			.filter((char: string) => !Number.isNaN(+char))
-			.join('')
-			.split(' ')
-			.join('')}`,
+		info: `(${env.PHONE_NUMBER.slice(0, 3)}) 
+		${env.PHONE_NUMBER.slice(3, 6)} 
+		${env.PHONE_NUMBER.slice(6)}`,
+		link: `https://wa.me/${env.PHONE_NUMBER}`,
 	},
 	{
 		name: 'Email',
